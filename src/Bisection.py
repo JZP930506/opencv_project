@@ -18,9 +18,9 @@ class Bisection:
         r = np.zeros((r, c, 8), dtype=np.uint8)
         for i in range(8):
             r[:, :, i] = cv2.bitwise_and(lena, x[:, :, i])
-            mask = r[:, :, i] > 0
+            mask = r[:, :, i] > 126
             r[mask] = 255
-            pylab.gray()
+            pylab.bone()
             pylab.subplot(3, 3, i + 1)
             pylab.imshow(r[:, :, i])
             pylab.axis('off')  # 去掉坐标轴
